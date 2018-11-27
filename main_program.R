@@ -223,11 +223,4 @@ checkDF$Pvalue[checkDF$Antecedent_Month==10&checkDF$Nutrient=="P"] <- pv.p.10
 checkDF$Pvalue[checkDF$Antecedent_Month==11&checkDF$Nutrient=="P"] <- pv.p.11
 checkDF$Pvalue[checkDF$Antecedent_Month==12&checkDF$Nutrient=="P"] <- pv.p.12
 
-p<- ggplot(pDF,aes(Feb.annual, Nm.mean)) + 
-    geom_point(data=pDF, aes(Feb.annual, Nm.mean))+
-    geom_line(aes(y=predicted), size=0.8) +
-    theme_bw()
-plot(p)
-
-
-with(pDF, plot(Pm.mean~face))
+write.csv(checkDF, "output/antecedent_rainfall_effect.csv", row.names=F)
