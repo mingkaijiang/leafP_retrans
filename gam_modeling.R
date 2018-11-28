@@ -6,10 +6,6 @@ library(visreg)
 library(plyr)
 library(ggplot2)
 
-library(tidyverse)
-library(magrittr)
-library(nlme)
-library(MuMIn)
 
 ## read input
 myDF <- read.csv("data/Means_LeafAge_figS1.csv")
@@ -25,7 +21,7 @@ p <- ggplot(myDF, aes(x=LeafAge, y=Pm.mean)) +
     geom_point()+
     geom_errorbar(data=myDF, mapping=aes(ymax=pos, ymin=neg), 
                    width=0.6, size=0.4) +    
-    geom_smooth(method=gam, formula = y~s(x, bs="ps"))+
+    geom_smooth(method=gam, formula = y~s(x, bs="ps"), col="black")+
     theme_linedraw() +
     theme(panel.grid.minor=element_blank(),
           axis.title.x = element_text(size=14), 
@@ -34,7 +30,7 @@ p <- ggplot(myDF, aes(x=LeafAge, y=Pm.mean)) +
           axis.title.y=element_text(size=14),
           legend.text=element_text(size=12),
           legend.title=element_text(size=14),
-          panel.grid.major=element_line(color="grey"),
+          panel.grid.major=element_blank(),
           legend.position="none")+
     ylab(expression(paste("Leaf ", P[m], " (mg ", g^-1, ")")))+
     xlab("Leaf Age (days)")

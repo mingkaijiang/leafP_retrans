@@ -228,7 +228,7 @@ write.csv(checkDF, "output/antecedent_rainfall_effect.csv", row.names=F)
 ### plot
 p1 <- ggplot(testDF, aes(x=R1, y=Pm.mean)) +
     geom_point()+
-    geom_smooth(method=lm)+
+    geom_smooth(method=lm, col="black")+
     theme_linedraw() +
     theme(panel.grid.minor=element_blank(),
           axis.title.x = element_blank(), 
@@ -237,14 +237,14 @@ p1 <- ggplot(testDF, aes(x=R1, y=Pm.mean)) +
           axis.title.y=element_text(size=14),
           legend.text=element_text(size=12),
           legend.title=element_text(size=14),
-          panel.grid.major=element_line(color="grey"),
+          panel.grid.major=element_blank(),
           legend.position="none")+
     ylab(expression(paste("Leaf ", P[m], " (mg ", g^-1, ")")))+
     xlab("Rainfall (mm)")
 
 p2 <- ggplot(testDF, aes(x=R1, y=Nm.mean)) +
     geom_point()+
-    geom_smooth(method=lm)+
+    geom_smooth(method=lm, col="black")+
     theme_linedraw() +
     theme(panel.grid.minor=element_blank(),
           axis.title.x = element_text(size=14), 
@@ -253,14 +253,14 @@ p2 <- ggplot(testDF, aes(x=R1, y=Nm.mean)) +
           axis.title.y=element_text(size=14),
           legend.text=element_text(size=12),
           legend.title=element_text(size=14),
-          panel.grid.major=element_line(color="grey"),
+          panel.grid.major=element_blank(),
           legend.position="none")+
     ylab(expression(paste("Leaf ", N[m], " (mg ", g^-1, ")")))+
     xlab("Rainfall (mm)")
 
 p3 <- ggplot(testDF, aes(x=R6, y=Pm.mean)) +
     geom_point()+
-    geom_smooth(method=lm)+
+    geom_smooth(method=lm, col="black")+
     theme_linedraw() +
     theme(panel.grid.minor=element_blank(),
           axis.title.x = element_blank(), 
@@ -269,14 +269,14 @@ p3 <- ggplot(testDF, aes(x=R6, y=Pm.mean)) +
           axis.title.y=element_blank(),
           legend.text=element_text(size=12),
           legend.title=element_text(size=14),
-          panel.grid.major=element_line(color="grey"),
+          panel.grid.major=element_blank(),
           legend.position="none")+
     #ylab(expression(paste("Leaf ", P[m], " (mg ", g^-1, ")")))+
     xlab("Rainfall (mm)")
 
 p4 <- ggplot(testDF, aes(x=R6, y=Nm.mean)) +
     geom_point()+
-    geom_smooth(method=lm)+
+    geom_smooth(method=lm, col="black")+
     theme_linedraw() +
     theme(panel.grid.minor=element_blank(),
           axis.title.x = element_text(size=14), 
@@ -285,7 +285,7 @@ p4 <- ggplot(testDF, aes(x=R6, y=Nm.mean)) +
           axis.title.y=element_blank(),
           legend.text=element_text(size=12),
           legend.title=element_text(size=14),
-          panel.grid.major=element_line(color="grey"),
+          panel.grid.major=element_blank(),
           legend.position="none")+
     #ylab(expression(paste("Leaf ", N[m], " (mg ", g^-1, ")")))+
     xlab("Rainfall (mm)")
