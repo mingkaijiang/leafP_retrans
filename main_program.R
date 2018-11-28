@@ -291,7 +291,7 @@ p4 <- ggplot(testDF, aes(x=R6, y=Nm.mean)) +
     xlab("Rainfall (mm)")
 
 
-grid.labs <- c("(a)", "(b)", "(c)", "(d)")
+grid.labs <- c("(A)", "(B)", "(C)", "(D)")
 
 require(cowplot)
 require(grid)
